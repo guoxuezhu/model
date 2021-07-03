@@ -6,7 +6,7 @@ android {
     signingConfigs {
         release {
             keyAlias 'mvp'
-            keyPassword 'gxzmvp'
+            keyPassword 'mvpgxz'
             storeFile file('../key/mvp.jks')
             storePassword 'mvpgxz'
         }
