@@ -7,30 +7,29 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.gxz.mymvp.MvpApplication;
-//import com.gxz.mymvp.injection.component.ActivityComponent;
-//import com.gxz.mymvp.injection.component.DaggerActivityComponent;
-//import com.gxz.mymvp.injection.module.ActivityModule;
-
+import com.gxz.mymvp.MvpApplication;
+import com.gxz.mymvp.injection.component.ActivityComponent;
+import com.gxz.mymvp.injection.component.DaggerActivityComponent;
+import com.gxz.mymvp.injection.module.ActivityModule;
 
 public class BaseActivity extends AppCompatActivity {
 
-//    private ActivityComponent mActivityComponent;
+    private ActivityComponent mActivityComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-//    public ActivityComponent activityComponent() {
-//        if (mActivityComponent == null) {
-//            mActivityComponent = DaggerActivityComponent.builder()
-//                    .activityModule(new ActivityModule(this))
-//                    .applicationComponent(MvpApplication.get(this).getComponent())
-//                    .build();
-//        }
-//        return mActivityComponent;
-//    }
+    public ActivityComponent activityComponent() {
+        if (mActivityComponent == null) {
+            mActivityComponent = DaggerActivityComponent.builder()
+                    .activityModule(new ActivityModule(this))
+                    .applicationComponent(MvpApplication.get(this).getComponent())
+                    .build();
+        }
+        return mActivityComponent;
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     public void requestPermissionsSafely(String[] permissions, int requestCode) {

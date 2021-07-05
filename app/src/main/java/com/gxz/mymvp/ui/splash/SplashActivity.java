@@ -24,6 +24,7 @@ public class SplashActivity extends BaseActivity implements SplashMvpView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
+        activityComponent().inject(this);
         mSplashPresenter.attachView(this);
         mHandler = new Handler(Looper.myLooper());
         mHandler.postDelayed(() -> {
