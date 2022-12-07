@@ -5,8 +5,6 @@ import com.gxz.mymvp.net.MvpClient;
 import com.gxz.mymvp.ui.base.Presenter;
 import com.gxz.mymvp.utils.ELog;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 import javax.inject.Inject;
@@ -43,17 +41,17 @@ public class MainPresenter implements Presenter<MainMvpView> {
                 .map(listHttpResult -> listHttpResult.getData().getRows())
                 .subscribe(new Observer<List<ZksDevice>>() {
                     @Override
-                    public void onSubscribe(@NotNull Disposable d) {
+                    public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(@NotNull List<ZksDevice> zksDevices) {
+                    public void onNext(List<ZksDevice> zksDevices) {
                         ELog.i("============列表======onNext=======" + zksDevices.toString());
                     }
 
                     @Override
-                    public void onError(@NotNull Throwable e) {
+                    public void onError(Throwable e) {
                         ELog.i("============列表======onError=======" + e.toString());
                     }
 
